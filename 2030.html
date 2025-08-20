@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Future in Tech: A 2030 Career Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Energetic & Playful" (#FF6B6B, #FFD166, #06D6A0, #118AB2, #073B4C) -->
+    <!-- Application Structure Plan: The SPA is designed as a narrative journey for a 2028-2030 graduate. It starts with a high-level overview of the four "Tectonic Shifts" shaping the future (AI, Data/Cloud, Security, Human Skills). It then presents a direct comparison of the USA and Indian tech markets to highlight global opportunities. Following this, an interactive chart visualizes today's high-growth roles as foundational skills. The infographic then pivots to the "Next Frontiers" (Quantum, AR/VR, etc.) to guide future specialization. It concludes with a clear, actionable "Undergraduate Action Plan." This structure moves from broad context to specific actions, making the report's dense information highly consumable and strategic for a student audience. -->
+    <!-- Visualization & Content Choices: 
+        - Tectonic Shifts (Inform): Goal: Quickly convey the four main future trends. Method: A 2x2 grid of styled cards with Unicode icons and concise text. Justification: Visually engaging and easily scannable for high-level concepts.
+        - USA vs. India Comparison (Compare): Goal: Highlight distinct regional opportunities. Method: Two side-by-side content cards with bold statistics. Justification: Direct comparison is most effective for this data.
+        - High-Growth Foundational Roles (Compare/Organize): Goal: Show which current roles offer the strongest foundational skills based on momentum. Method: Chart.js Horizontal Bar Chart. Interaction: Tooltips on hover. Justification: A horizontal bar chart is excellent for comparing and ranking categories (roles) by a single metric (growth %).
+        - The Next Frontiers (Change/Inform): Goal: Introduce emerging fields and their future impact. Method: A vertical timeline built with structured HTML/CSS. Interaction: N/A. Justification: A timeline effectively communicates a forward-looking progression of technologies.
+        - Undergraduate Action Plan (Organize): Goal: Provide a clear, step-by-step roadmap. Method: A styled, numbered list using HTML/CSS. Justification: A simple, ordered list is the clearest way to present actionable steps.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #073B4C; /* Dark Blue-Teal */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 450px;
+            max-height: 60vh;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #118AB2, #06D6A0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #FFD166; /* Yellow */
+            border: 4px solid #073B4C;
+        }
+        .timeline-path::before {
+            content: '';
+            position: absolute;
+            left: -21px;
+            top: 20px;
+            bottom: 0;
+            width: 2px;
+            background-color: #073B4C;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto px-4 py-12 md:px-8">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-20">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Charting Your Course for <span class="gradient-text">2030</span></h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">An interactive guide for undergraduates navigating the future of tech. Based on the "Navigating the Next Wave" report, this is your strategic blueprint for a successful career in 2028-2030 and beyond.</p>
+        </section>
+
+        <!-- Tectonic Shifts Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">The Four Tectonic Shifts of the Late 2020s</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">By the time you graduate, these four trends will be industry standards. Understanding them is the key to aligning your education with future demand.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#118AB2]">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-2">AI as a Universal Tool</h3>
+                    <p class="text-gray-600">Generative AI will be your collaborator, automating up to 70% of routine coding. Your value will shift from writing basic code to complex problem-solving and system architecture.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#06D6A0]">
+                    <div class="text-4xl mb-4">☁️</div>
+                    <h3 class="text-xl font-bold mb-2">Primacy of Data & Cloud</h3>
+                    <p class="text-gray-600">Cloud and data literacy will be as fundamental as programming is today. The global IT industry is set to exceed $10 trillion, driven by a $1.6 trillion cloud market.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#FFD166]">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2">Cybersecurity as a Business Enabler</h3>
+                    <p class="text-gray-600">Demand for cybersecurity skills will be the second fastest-growing globally. The field is shifting to a predictive, AI-integrated model, making it a strategic business function.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-[#FF6B6B]">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold mb-2">The Human-Skill Differentiator</h3>
+                    <p class="text-gray-600">As AI automates technical tasks, skills like analytical thinking, creativity, and resilience become your most valuable assets and key competitive advantages.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Landscape Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">The Global Landscape: USA vs. India in 2030</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">Tech opportunities are immense globally, but the focus differs. Here's how to strategically position yourself in two of the world's largest tech markets.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center"><span class="text-4xl mr-4">🇺🇸</span> USA: Deep Tech & Innovation</h3>
+                    <p class="text-gray-600 mb-6">The US market is increasingly driven by massive investment in deep tech like semiconductors and quantum computing, creating a huge demand for specialists.</p>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <p class="text-3xl font-bold text-[#118AB2]">$700 Billion</p>
+                            <p class="font-semibold">Projected IT services market by 2030.</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-md">
+                            <p class="text-3xl font-bold text-[#118AB2]">67,000</p>
+                            <p class="font-semibold">Projected shortfall of engineers in the semiconductor industry alone.</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-md">
+                            <p class="font-bold text-[#073B4C]">Your Strategic Focus:</p>
+                            <p class="text-gray-600">Pursue specialization in deep-tech fields. Aligning projects with federally funded research areas (AI, Quantum) provides a significant career advantage.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center"><span class="text-4xl mr-4">🇮🇳</span> India: Hyper-Growth & Scale</h3>
+                    <p class="text-gray-600 mb-6">India's market is defined by explosive growth and a massive talent demand-supply gap, creating enormous opportunities for skilled graduates.</p>
+                    <div class="space-y-4">
+                        <div class="bg-green-50 p-4 rounded-md">
+                            <p class="text-3xl font-bold text-[#06D6A0]">20x</p>
+                            <p class="font-semibold">Potential demand for digital skills vs. available fresh talent pool.</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-md">
+                            <p class="text-3xl font-bold text-[#06D6A0]">$223 Billion</p>
+                            <p class="font-semibold">Projected digital transformation market by 2030.</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-md">
+                            <p class="font-bold text-[#073B4C]">Your Strategic Focus:</p>
+                            <p class="text-gray-600">Target high-demand skills in AI/ML and Cybersecurity to directly address the market's largest talent gap. A career in a Global Capability Center (GCC) offers a path to global leadership roles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- High-Growth Roles Chart -->
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Today's High-Growth Roles: Your Foundation</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">While the landscape is shifting, today's fastest-growing roles provide the foundational skills you'll need for the jobs of 2030. This chart shows the projected growth for key roles, highlighting where to build your core expertise.</p>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Frontiers Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">The Next Frontiers: Your Future Specialization</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">These emerging domains are poised to enter their prime as you graduate. Gaining early exposure now can provide a significant long-term advantage and set you apart in the job market of 2030.</p>
+            <div class="max-w-3xl mx-auto">
+                <div class="relative pl-8">
+                    <div class="timeline-path">
+                        <div class="timeline-item relative mb-12">
+                            <h3 class="text-2xl font-bold text-[#118AB2]">Quantum Computing</h3>
+                            <p class="text-gray-600">With industrial-grade quantum computers expected by 2030, a talent explosion will create ~250,000 new jobs for Quantum Software Developers and Algorithm Researchers.</p>
+                        </div>
+                        <div class="timeline-item relative mb-12">
+                            <h3 class="text-2xl font-bold text-[#06D6A0]">Augmented/Virtual Reality (AR/VR)</h3>
+                            <p class="text-gray-600">Projected to be a $450B+ market by 2030, this field will need a new generation of AR/VR Developers and Designers to build immersive experiences for healthcare, education, and entertainment.</p>
+                        </div>
+                        <div class="timeline-item relative mb-12">
+                            <h3 class="text-2xl font-bold text-[#FFD166]">Blockchain & Decentralized Systems</h3>
+                            <p class="text-gray-600">Maturing beyond crypto, blockchain is becoming a foundational layer for secure supply chains and digital identity. In India, developers in this space earn 50-100% more than their peers.</p>
+                        </div>
+                        <div class="timeline-item relative">
+                            <h3 class="text-2xl font-bold text-[#FF6B6B]">Specialized Interdisciplinary Fields</h3>
+                            <p class="text-gray-600">The fusion of CS with other domains will create high-value roles. Focus on areas like Computational Biology for medicine or software for Autonomous and Electric Vehicles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Plan Section -->
+        <section>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Your Undergraduate Action Plan for a 2030 Career</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">Time is your greatest asset. Use it strategically to build a future-proof profile with this five-step plan.</p>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-extrabold text-[#118AB2] mr-6">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold">Master the Core, Specialize at the Edge</h3>
+                        <p class="text-gray-600">Build a strong foundation in CS fundamentals from your curriculum. Use electives, projects, and internships to gain deep expertise in one or two high-growth areas like AI/ML or cloud-native development.</p>
+                    </div>
+                </div>
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-extrabold text-[#06D6A0] mr-6">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold">Learn to Partner with AI</h3>
+                        <p class="text-gray-600">Don't just use AI tools—master them as productivity multipliers. Document how you use AI assistants in your projects to automate routine work, allowing you to focus on high-level architectural decisions.</p>
+                    </div>
+                </div>
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-extrabold text-[#FFD166] mr-6">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold">Build a Portfolio for 2030</h3>
+                        <p class="text-gray-600">Your projects should reflect the future. Build a web app that is deployed on a cloud platform, integrates an ML model via an API, and is built with security best practices. Explore emerging domains like AR or blockchain.</p>
+                    </div>
+                </div>
+                <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-extrabold text-[#FF6B6B] mr-6">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold">Cultivate Human-Centric Skills</h3>
+                        <p class="text-gray-600">Join clubs, lead project teams, and participate in hackathons. Practice presenting your technical work to non-technical audiences. Your communication and collaboration skills will be your most durable advantage.</p>
+                    </div>
+                </div>
+                 <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-4xl font-extrabold text-[#073B4C] mr-6">5</div>
+                    <div>
+                        <h3 class="text-xl font-bold">Engage in Lifelong Learning, Starting Now</h3>
+                        <p class="text-gray-600">The tech of 2030 is emerging today. Cultivate a habit of curiosity. Follow industry leaders, read research papers, and never stop experimenting. Your ability to learn and adapt will determine your long-term success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const growthData = [
+                { role: 'Data Scientist', growth: 36, color: '#06D6A0' },
+                { role: 'Cybersecurity Analyst', growth: 33, color: '#FFD166' },
+                { role: ['AI/Machine', 'Learning Engineer'], growth: 26, color: '#118AB2' },
+                { role: 'Software Developer', growth: 17, color: '#118AB2' },
+                { role: 'Cloud Engineer', growth: 17, color: '#118AB2' },
+                { role: 'Data Analyst', growth: 11, color: '#06D6A0' },
+                { role: 'Product Manager', growth: 11, color: '#FF6B6B' },
+                { role: 'UI/UX Designer', growth: 8, color: '#FF6B6B' },
+                { role: 'IT Support Specialist', growth: 6, color: '#FFD166' }
+            ];
+
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: growthData.map(d => d.role),
+                    datasets: [{
+                        label: 'Projected Job Growth (2023-2033)',
+                        data: growthData.map(d => d.growth),
+                        backgroundColor: growthData.map(d => d.color),
+                        borderColor: growthData.map(d => d.color),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Projected Growth (%)'
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                autoSkip: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                },
+                                label: function(context) {
+                                    return ` Growth: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
